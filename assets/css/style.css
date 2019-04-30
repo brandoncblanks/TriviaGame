@@ -1,0 +1,41 @@
+
+
+body {
+    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvzCM4ag0bZKAa-2CH-s9VAHDJWaGbjlL3XdoI3yloVIl6Sut3);
+    
+}
+
+.container {
+    width: 800px;
+    height: 800px;
+    background-color: tan;
+   
+
+}
+
+h1 {
+
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 100px;
+    color: green;
+    margin: auto;
+    font-style: italic;
+    padding-top: 50px;    
+
+}
+
+p {
+    font-size: 75px;
+    margin: auto;
+    font-family: serif;
+    padding-top: 100px;
+    
+}
+
+ul {
+    font-size: 50px;
+    margin: auto;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    padding-top: 100px;
+
+}
