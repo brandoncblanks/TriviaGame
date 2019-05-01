@@ -1,56 +1,47 @@
-
-
-
 var countTime = newTime("1:00").getTime();
 
 var x = setInterval(function() {
-
-    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
   var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-    
 
-  document.getElementById("Time Remaining").innerHTML = days + "d " + hours + "h "
-  + minutes + "m " + seconds + "s ";
-    
-  
+  document.getElementById("Time Remaining").innerHTML =
+    days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+
   if (distance < 0) {
     clearInterval(x);
     document.getElementById("Time Remaining").innerHTML = "EXPIRED";
-
   }
-
 }, 5000);
 
 const questions = [
-    {
-      question: "",
-      option1: "",
-      option2: "",
-      option3: ""
-    },
-    {
-      question: "",
-      option1: "",
-      option2: "",
-      option3: ""
-    },
-    {
-      question: "",
-      option1: "",
-      option2: "",
-      option3: "B"
-    },
-    {
-      question: "",
-      option1: "",
-      option2: "",
-      option3: ""
-    }
-  ];
-  
-  function Question (props) {
-    return (
-      `<h2>${props.question}</h2>
+  {
+    question: "",
+    option1: "",
+    option2: "",
+    option3: ""
+  },
+  {
+    question: "",
+    option1: "",
+    option2: "",
+    option3: ""
+  },
+  {
+    question: "",
+    option1: "",
+    option2: "",
+    option3: "B"
+  },
+  {
+    question: "",
+    option1: "",
+    option2: "",
+    option3: ""
+  }
+];
+
+function Question(props) {
+  return `<h2>${props.question}</h2>
        <div class="form-group">
          <label>${props.option1}</label> 
          <input type="radio" value="${props.option1}" />
@@ -62,35 +53,34 @@ const questions = [
        <div class="form-group">
          <label>${props.option3}</label> 
          <input type="radio" value="${props.option3}" />
-       </div>`
-    );
-  }
-  
-  function QRow (question) {
-      return (
-        `<div class="row">
+       </div>`;
+}
+
+function QRow(question) {
+  return `<div class="row">
               <div class="col">
                 ${Question(question)}
               </div>
-          </div>`
-      );
+          </div>`;
+}
+
+function renderQuestions() {
+  let questionsHtml = "";
+  for (let i = 0; i < questions.length; i++) {
+    questionsHtml += QRow(questions[i]);
   }
-  
-  function renderQuestions () {
-    let questionsHtml = "";
-    for (let i = 0; i < questions.length; i++) {
-      questionsHtml += QRow(questions[i]);
-    }
-    return questionsHtml;
-  }
-  
-  function QuestionsContainer () {
-    return `<div class="container">
+  return questionsHtml;
+}
+
+function QuestionsContainer() {
+  return `<div class="container">
       ${renderQuestions()}
     </div>`;
-    console.log(question);
-  }
-  
-  const newRow = $("#root").html( QuestionsContainer() );
-  
-  
+  console.log(question);
+}
+
+const newRow = $("#root").html(QuestionsContainer());
+
+//tried putting in timer and just can't figure out what to do; put a bunch of code in there but wasn't real sure what i was doing, just doing a lot of research and adding of code.
+//also tried putting in the questions and couldn't get them to work either, again wasn't real sure what i was doing just trying to make something work we learned in class.
+//
